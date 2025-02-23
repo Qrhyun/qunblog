@@ -64,3 +64,19 @@ valine:
   lang: zh-cn # i18n: zh-cn/en
   placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
   guest_info: nick,mail,link #valine comment header info
+
+
+# RSS
+feed:
+  enable: true
+  type: atom
+  path: atom.xml #RSSÎÄ¼şÂ·¾¶
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: /img/avatar.png
+  autodiscovery: true
+  template:
