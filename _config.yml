@@ -8,9 +8,9 @@ subtitle:
 description: 
 keywords: 
 author: Qrhyun
-language: en
+language: zh-Hans
 timezone: 'Asia/Shanghai'
-
+encoding: 'utf-8'
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://qunblog.vercel.app/
