@@ -68,7 +68,7 @@ public:
 ## 3. UI框架层---建立在底层API和基础框架层之上
 ###  .NET生态UI框架
 #### WinForms
-```csharp
+```c#
 // WinForms
 var form = new Form();
 var button = new Button { Text = "Click Me" };
@@ -158,7 +158,7 @@ public sealed partial class MainPage : Page
 <Button Content="Click Me" Width="100" Height="30" 
         Margin="10" Click="Button_Click"
         Style="{StaticResource AccentButtonStyle}"/>
-````
+```
 - 独立的UI框架
 - 可用于Win32和UWP应用
 - 现代的Windows 11风格设计
@@ -233,6 +233,7 @@ const WindowsApp = () => (
 - 优势：Web开发者易上手，跨平台代码复用
 - 劣势：性能不如原生，生态相对较新
 
+## 6.总结
 ### 对上面的总结
 ```md
 ┌─────────────────────────────────────────────────────────────────┐
@@ -272,3 +273,21 @@ const WindowsApp = () => (
 | **React Native for Windows** | JavaScript | WinRT+Bridge | 类原生 | 中 | 中等 | 传统/Store | 部分 | 跨平台桌面 |
 
 ### 性能对比
+性能排序（从高到低）：
+1. MFC/WTL (C++) - 直接Win32调用
+2. WinForms/WPF - .NET编译优化
+3. WinUI 3 - 现代优化的原生组件  
+4. UWP - 沙盒环境轻微开销
+5. React Native for Windows - JavaScript桥接开销
+
+### 技术选择建议
+| 项目类型 | 首选 | 次选 | 备选 |
+|----------|------|------|------|
+| **现代桌面应用** | Windows App SDK | WPF | WinUI 3 |
+| **跨平台应用** | React Native for Windows | Electron | Flutter |
+| **高性能应用** | MFC/WTL | WPF | WinForms |
+| **快速原型** | WinForms | React Native for Windows | WPF |
+| **商店应用** | UWP | Windows App SDK | - |
+| **企业应用** | WPF | Windows App SDK | WinForms |
+| **系统工具** | MFC | WTL | Win32 API |
+| **Web开发者转型** | React Native for Windows | Electron | PWA |
